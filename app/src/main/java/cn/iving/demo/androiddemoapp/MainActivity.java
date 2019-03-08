@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import cn.iving.demo.view.LoginActivity;
+import cn.iving.demo.viewsdemo.RecyclerViewDemoActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
         this.findViewById(R.id.btn_mvp).setOnClickListener(this);
+        //btn_customView
+        this.findViewById(R.id.btn_customView).setOnClickListener(this);
     }
 
     @Override
@@ -62,6 +65,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(this,"进入MVP demo",Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(this,LoginActivity.class);
                 this.startActivity(intent);
+
+                break;
+
+            case R.id.btn_customView:
+                Intent intent2 = new Intent(this,RecyclerViewDemoActivity.class);
+                this.startActivity(intent2);
 
                 break;
         }
