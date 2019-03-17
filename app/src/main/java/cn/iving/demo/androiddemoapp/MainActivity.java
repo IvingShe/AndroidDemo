@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.findViewById(R.id.btn_mvp).setOnClickListener(this);
         //btn_customView
         this.findViewById(R.id.btn_customView).setOnClickListener(this);
+        this.findViewById(R.id.btn_permission).setOnClickListener(this);
     }
 
     @Override
@@ -60,19 +61,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.btn_mvp:
-                Toast.makeText(this,"进入MVP demo",Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(this,LoginActivity.class);
+                Toast.makeText(this, "进入MVP demo", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(this, LoginActivity.class);
                 this.startActivity(intent);
 
                 break;
 
             case R.id.btn_customView:
-                Intent intent2 = new Intent(this,RecyclerViewDemoActivity.class);
+                Intent intent2 = new Intent(this, RecyclerViewDemoActivity.class);
                 this.startActivity(intent2);
 
                 break;
+            case R.id.btn_permission:
+                Intent intent3 = new Intent(this, PermissionCheckerActivity.class);
+                this.startActivity(intent3);
+                break;
+
         }
     }
 }
