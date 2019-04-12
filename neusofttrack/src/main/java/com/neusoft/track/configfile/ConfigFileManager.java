@@ -87,7 +87,7 @@ public class ConfigFileManager {
 		NLog.d(TAG, "expired time: " + expireTime);
 		NLog.d(TAG, "current time: " + currentTime);
 		if(connManager == null)
-			connManager =(ConnectivityManager) mContext.getSystemService(android.content.Context.CONNECTIVITY_SERVICE);
+			connManager =(ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
 		mNetworkInfo = connManager.getActiveNetworkInfo();
 		if (mNetworkInfo != null &&  mNetworkInfo.isConnected() == true)
 		{

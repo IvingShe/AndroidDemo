@@ -1,1 +1,1 @@
-include ':app', ':mvpdemo', ':viewsdemo'
+include ':app', ':mvpdemo', ':viewsdemo', ':neusofttrack'

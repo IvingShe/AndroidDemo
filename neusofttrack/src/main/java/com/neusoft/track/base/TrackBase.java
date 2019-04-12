@@ -61,7 +61,7 @@ public abstract class TrackBase implements TrackApi, UncaughtExceptionHandler {
 	private LogFileManager mLogFileManager;
 	private LocInfo mLocInfo = new LocInfo();
 	
-	private Thread.UncaughtExceptionHandler mDefaultHandler;
+	private UncaughtExceptionHandler mDefaultHandler;
 
 	private boolean isLogEnable = true;
 	private boolean isConfigLogEnable = true;
@@ -372,9 +372,9 @@ public abstract class TrackBase implements TrackApi, UncaughtExceptionHandler {
 	
 	private void initTeminalInfo() {
 		os = "Android";
-		osVersion = os + android.os.Build.VERSION.RELEASE;
-		brand = android.os.Build.BRAND;
-		model = android.os.Build.MODEL;
+		osVersion = os + Build.VERSION.RELEASE;
+		brand = Build.BRAND;
+		model = Build.MODEL;
 		getDisplayScreenResolution();
 		terminalId = UUIDUtil.getUUID(mContext);
 	}

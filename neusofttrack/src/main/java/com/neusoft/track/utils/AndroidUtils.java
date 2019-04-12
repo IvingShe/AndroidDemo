@@ -190,7 +190,7 @@ public class AndroidUtils {
 		}
 		try
 		{
-			TelephonyManager tm = (TelephonyManager) context.getSystemService(android.content.Context.TELEPHONY_SERVICE);
+			TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
 			if (tm == null)
 				return null;
 			else
@@ -778,8 +778,8 @@ public class AndroidUtils {
      * SDCARD是否存
      */
     public static boolean externalMemoryAvailable() {
-        return android.os.Environment.getExternalStorageState().equals(
-                android.os.Environment.MEDIA_MOUNTED);
+        return Environment.getExternalStorageState().equals(
+                Environment.MEDIA_MOUNTED);
     }
 
 
@@ -795,7 +795,7 @@ public class AndroidUtils {
     		List<RunningAppProcessInfo> processList = mActivityManager.getRunningAppProcesses();
     		if(processList != null)
     		{
-    			for (ActivityManager.RunningAppProcessInfo appProcess : processList) 
+    			for (RunningAppProcessInfo appProcess : processList)
     			{ 
     				if (appProcess.pid == pid) 
     				{ 			

@@ -75,10 +75,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case R.id.btn_permission:
-                Intent intent3 = new Intent(this, PermissionCheckerActivity.class);
-                this.startActivity(intent3);
+//                Intent intent3 = new Intent(this, PermissionCheckerActivity.class);
+////                this.startActivity(intent3);
+                jump2Log();
                 break;
 
         }
+    }
+
+
+
+    private void jump2Log(){
+        Intent intent3 = new Intent(this, com.neusoft.track.MainActivity.class);
+        this.startActivity(intent3);
     }
 }
