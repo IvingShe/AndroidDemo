@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity"
+    android:orientation="vertical" >
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="注意：如果程序有crash异常，如果不是测试未捕获异常引起的，麻烦截下log！"
+        />
+
+    <Button
+        android:id="@+id/test_msg_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试正常日志" />
+    
+     <Button
+        android:id="@+id/test_interface_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试接口日志" />
+     
+       <Button
+        android:id="@+id/test_caught_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试捕获异常日志" />
+       
+        <Button
+        android:id="@+id/test_uncaught_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试未捕获异常日志" />
+        
+        <Button
+        android:id="@+id/test_web_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试web页面失败日志" />
+        
+        <Button
+        android:id="@+id/test_postfile_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试上传日志" />
+        
+        <Button
+        android:id="@+id/test_getPhoneInfo_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试获取手机信息" />
+
+</LinearLayout >
