@@ -1,16 +1,24 @@
 package cn.iving.demo.androiddemoapp;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import cn.iving.demo.service.MainService;
 import cn.iving.demo.view.LoginActivity;
 import cn.iving.demo.viewsdemo.RecyclerViewDemoActivity;
 
@@ -23,18 +31,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
         this.findViewById(R.id.btn_mvp).setOnClickListener(this);
-        //btn_customView
+        //btn_validate_service
         this.findViewById(R.id.btn_customView).setOnClickListener(this);
         this.findViewById(R.id.btn_permission).setOnClickListener(this);
+        this.findViewById(R.id.btn_validate_service).setOnClickListener(this);
+        validateService();
     }
 
     @Override
@@ -79,14 +89,58 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 ////                this.startActivity(intent3);
                 jump2Log();
                 break;
+            case R.id.btn_validate_service:
+                sendBroadcast();
+                break;
+
+        }
+    }
+
+    private void validateService() {
+        Log.d("test", "MainActivity:validateService");
+        NetWorkChangedReceiver receiver = new NetWorkChangedReceiver();
+        IntentFilter filter = new IntentFilter();
+        // filter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+        filter.addAction("testvalidateService");
+        registerReceiver(receiver, filter);
+    }
+
+
+    private void sendBroadcast() {
+        Log.d("test", "MainActivity:sendBroadcast");
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Log.d("test", "MainActivity:sendBroadcast:run");
+
+                Intent intent = new Intent();
+                intent.setAction("testvalidateService");
+                MainActivity.this.sendBroadcast(intent);
+            }
+        },5*1000);
+
+    }
+
+
+    private void jump2Log() {
+        Intent intent3 = new Intent(this, com.neusoft.track.MainActivity.class);
+        this.startActivity(intent3);
+    }
+
+
+    private class NetWorkChangedReceiver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+            String action = intent.getAction();
+            Log.d("test", "NetWorkChangedReceiver:action = " + action);
+
+            Intent intent2 = new Intent(context, MainService.class);
+            context.startService(intent2);
 
         }
     }
 
 
-
-    private void jump2Log(){
-        Intent intent3 = new Intent(this, com.neusoft.track.MainActivity.class);
-        this.startActivity(intent3);
-    }
 }

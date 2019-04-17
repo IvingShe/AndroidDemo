@@ -2,6 +2,7 @@ package com.neusoft.track;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import com.neusoft.track.base.LogType;
 import com.neusoft.track.cmread.CMTrack;
 import com.neusoft.track.utils.AndroidUtils;
+
 
 public class MainActivity extends Activity {
 
@@ -19,9 +21,9 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.neusofttrack_activity_main);
 		CMTrack.getInstance().init(true);
-		
+		Log.d("iving","22222onCreate");
 		Button test_msg_btn = (Button) findViewById(R.id.test_msg_btn);
 		test_msg_btn.setOnClickListener(new OnClickListener() {
 			
