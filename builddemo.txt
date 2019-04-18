@@ -1,0 +1,5 @@
+1.builddemo.gradle 为 gradle命令演示脚本；
+2.引入builddemo.gradle需要在项目根目录 的build.gradle文件中加入
+   apply from:"builddemo.gradle"
+3.运行任务：teminal(AS-->View-->Tool Windows-->Terminal)中使用命令
+   gradlew <taskName>

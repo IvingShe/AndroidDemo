@@ -1,0 +1,28 @@
+
+//gradle:project ,task ,action demo 演示说明
+task  mindTheOrder{
+    println  'Configuration!'
+    doFirst{
+        println 'Not really first'
+    }
+    doFirst{
+        println 'first'
+    }
+    doLast{
+        println 'Not really last'
+    }
+    doLast{
+        println 'last'
+    }
+
+}
+
+task task1<<{
+    println 'task1'
+}
+
+task task2<<{
+    println 'task2'
+}
+
+task2.dependsOn task1
