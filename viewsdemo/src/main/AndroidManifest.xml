@@ -5,6 +5,10 @@
         <activity
             android:name=".RecyclerViewDemoActivity">
            </activity>
+
+        <activity android:name=".CoordinaterLayoutActivity">
+
+        </activity>
     </application>
 
 

@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import cn.iving.demo.service.MainService;
 import cn.iving.demo.view.LoginActivity;
+import cn.iving.demo.viewsdemo.CoordinaterLayoutActivity;
 import cn.iving.demo.viewsdemo.RecyclerViewDemoActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -80,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.btn_customView:
-                Intent intent2 = new Intent(this, RecyclerViewDemoActivity.class);
+                Intent intent2 = new Intent(this, CoordinaterLayoutActivity.class);
                 this.startActivity(intent2);
 
                 break;
