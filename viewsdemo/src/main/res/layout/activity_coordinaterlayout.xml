@@ -56,7 +56,20 @@
             android:textSize="30dp" />
     </android.support.design.widget.AppBarLayout>
     <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
-    <android.support.v4.widget.NestedScrollView
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+
+
+
+  <!--  <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -197,6 +210,6 @@
                 android:textSize="30dp" />
         </LinearLayout>
 
-    </android.support.v4.widget.NestedScrollView>
+    </android.support.v4.widget.NestedScrollView>-->
 
 </android.support.design.widget.CoordinatorLayout>
