@@ -36,16 +36,24 @@
                 app:layout_collapseMode="pin">
 
                 <TextView
+                    android:id="@+id/tvTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="杭州欢迎你"
+                    android:visibility="gone"
                     android:textSize="30dp" />
 
             </android.support.v7.widget.Toolbar>
 
 
         </android.support.design.widget.CollapsingToolbarLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="我是向上滑动可以停留的Text"
+            android:textSize="30dp" />
     </android.support.design.widget.AppBarLayout>
     <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
     <android.support.v4.widget.NestedScrollView
