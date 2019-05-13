@@ -18,6 +18,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.okhttpdemo.OKhttpDemoActivity;
+import com.java.demo.JavaTestManager;
+
 import cn.iving.demo.service.MainService;
 import cn.iving.demo.view.LoginActivity;
 import cn.iving.demo.viewsdemo.CoordinaterLayoutActivity;
@@ -45,6 +48,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.findViewById(R.id.btn_customView).setOnClickListener(this);
         this.findViewById(R.id.btn_permission).setOnClickListener(this);
         this.findViewById(R.id.btn_validate_service).setOnClickListener(this);
+//
+        this.findViewById(R.id.btn_OKHttp).setOnClickListener(this);
+        this.findViewById(R.id.btn_java).setOnClickListener(this);
         validateService();
     }
 
@@ -92,6 +98,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_validate_service:
                 sendBroadcast();
+                break;
+            case R.id.btn_OKHttp:
+                Intent i= new Intent(this,OKhttpDemoActivity.class);
+                this.startActivity(i);
+                break;
+            case R.id.btn_java:
+                JavaTestManager. test();
                 break;
 
         }

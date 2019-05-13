@@ -15,10 +15,16 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-        debug{
+        debug {
 
         }
     }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
 }
 
 dependencies {
@@ -30,8 +36,10 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     //引入mvpdemo module
-    compile project(path: ':mvpdemo')
-    compile project(path: ':viewsdemo')
-    compile project(path: ':neusofttrack')
+    implementation project(path: ':mvpdemo')
+    implementation project(path: ':viewsdemo')
+    implementation project(path: ':neusofttrack')
+    implementation project(path: ':okhttpdemo')
+    compile project(path: ':JavaDemo')
 }
 
