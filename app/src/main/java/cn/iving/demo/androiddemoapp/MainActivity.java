@@ -4,12 +4,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.net.ConnectivityManager;
-import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -19,12 +15,11 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.okhttpdemo.OKhttpDemoActivity;
-import com.java.demo.JavaTestManager;
+import com.example.generic.JavaGenericTestManager;
 
 import cn.iving.demo.service.MainService;
 import cn.iving.demo.view.LoginActivity;
 import cn.iving.demo.viewsdemo.CoordinaterLayoutActivity;
-import cn.iving.demo.viewsdemo.RecyclerViewDemoActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -104,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 this.startActivity(i);
                 break;
             case R.id.btn_java:
-                JavaTestManager. test();
+                JavaGenericTestManager. test();
                 break;
 
         }
