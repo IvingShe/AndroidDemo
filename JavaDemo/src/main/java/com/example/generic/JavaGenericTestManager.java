@@ -1,6 +1,7 @@
 package com.example.generic;
 
-import com.example.generic.Test;
+import com.demo.queue.QueueDemo;
+import com.demo.stack.StackDemo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,8 +22,32 @@ public class JavaGenericTestManager {
 
        // test.testGenericWildcard();
        // test.testGenericWildcard2();
-        new JavaGenericTestManager().testGenericMethod();
+        //new JavaGenericTestManager().testGenericMethod();
+        testStack();
+        testQueue();
     }
+
+    /**
+     * test queue
+     */
+
+    public static void testQueue(){
+        QueueDemo queueDemo= new QueueDemo();
+        queueDemo.println();
+    }
+
+
+    /**
+     * test stack
+     */
+    public static void testStack(){
+        StackDemo s=  new StackDemo();
+        s.println();
+    }
+
+
+
+
 
     /**
      * 测试泛型及其继承关系
