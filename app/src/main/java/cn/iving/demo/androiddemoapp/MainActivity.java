@@ -17,16 +17,19 @@ import android.widget.Toast;
 import com.example.okhttpdemo.OKhttpDemoActivity;
 import com.example.generic.JavaGenericTestManager;
 
+import cn.iving.demo.annotation.ViewInject;
 import cn.iving.demo.service.MainService;
 import cn.iving.demo.view.LoginActivity;
 import cn.iving.demo.viewsdemo.CoordinaterLayoutActivity;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+@ViewInject(mainLayoutId=R.layout.activity_main)
+
+public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
