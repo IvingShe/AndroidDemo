@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.iving.demo.customView.CustomViewGroup
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    xmlns:rc="http://schemas.android.com/apk/res-auto">
+
+    <!--xmlns:rc="http://schemas.android.com/apk/res-auto":自定义属性命名空间-->
+    <!--
+    <cn.iving.demo.customView.CircleView
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        rc:radius="10dp"
+        rc:mycolor="#f0f039"/>
+    <cn.iving.demo.customView.CircleView
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        rc:radius="10dp"
+        rc:mycolor="#f28030"/>
+
+    <cn.iving.demo.customView.CircleView
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        rc:radius="10dp"
+        rc:mycolor="#f20030"/>
+
+    <cn.iving.demo.customView.CircleView
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        rc:radius="10dp"
+        rc:mycolor="#126230"/>
+      -->
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="btn" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="btn" />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="btn" />
+
+</cn.iving.demo.customView.CustomViewGroup>

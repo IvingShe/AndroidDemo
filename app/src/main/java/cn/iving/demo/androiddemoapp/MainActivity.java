@@ -17,7 +17,12 @@ import android.widget.Toast;
 import com.example.okhttpdemo.OKhttpDemoActivity;
 import com.example.generic.JavaGenericTestManager;
 
+
 import cn.iving.demo.annotation.ViewInject;
+
+import cn.iving.demo.JavaUtils;
+
+import cn.iving.demo.customView.CustomViewActivity;
 import cn.iving.demo.service.MainService;
 import cn.iving.demo.view.LoginActivity;
 import cn.iving.demo.viewsdemo.CoordinaterLayoutActivity;
@@ -52,6 +57,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         validateService();
     }
 
+
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -85,7 +93,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
 
             case R.id.btn_customView:
-                Intent intent2 = new Intent(this, CoordinaterLayoutActivity.class);
+               // Intent intent2 = new Intent(this, CoordinaterLayoutActivity.class);
+                 Intent intent2 = new Intent(this, CustomViewActivity.class);
+
                 this.startActivity(intent2);
 
                 break;
@@ -102,11 +112,15 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 this.startActivity(i);
                 break;
             case R.id.btn_java:
-                JavaGenericTestManager. test();
+              //  JavaGenericTestManager.test();
+               // new DownloadDemo(this).start();
+                JavaUtils javaUtils=new JavaUtils();
+                javaUtils.testPattern();
                 break;
 
         }
     }
+
 
     private void validateService() {
         Log.d("test", "MainActivity:validateService");
