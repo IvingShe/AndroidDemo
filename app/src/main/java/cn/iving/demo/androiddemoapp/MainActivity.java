@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.view.Menu;
@@ -15,7 +15,6 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.okhttpdemo.OKhttpDemoActivity;
-import com.example.generic.JavaGenericTestManager;
 
 
 import cn.iving.demo.annotation.ViewInject;
@@ -25,7 +24,6 @@ import cn.iving.demo.JavaUtils;
 import cn.iving.demo.customView.CustomViewActivity;
 import cn.iving.demo.service.MainService;
 import cn.iving.demo.view.LoginActivity;
-import cn.iving.demo.viewsdemo.CoordinaterLayoutActivity;
 
 @ViewInject(mainLayoutId=R.layout.activity_main)
 
