@@ -1,1 +1,1 @@
-include ':app', ':mvpdemo', ':viewsdemo', ':neusofttrack', ':okhttpdemo', ':JavaDemo'
+include ':app', ':mvpdemo', ':viewsdemo', ':neusofttrack', ':okhttpdemo', ':JavaDemo', ':greendaodemo'
