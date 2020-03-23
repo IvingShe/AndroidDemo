@@ -1,2 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.iving.greendaodemo" />
+    package="com.iving.greendaodemo">
+
+    <application>
+        <activity
+            android:name=".GreenDaoActivity"
+            android:label="@string/title_activity_green_dao"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+    </application>
+
+</manifest>

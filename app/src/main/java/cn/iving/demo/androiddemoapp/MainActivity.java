@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.okhttpdemo.OKhttpDemoActivity;
+import com.iving.greendaodemo.GreenDaoActivity;
 
 
 import cn.iving.demo.annotation.ViewInject;
@@ -52,6 +53,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 //
         this.findViewById(R.id.btn_OKHttp).setOnClickListener(this);
         this.findViewById(R.id.btn_java).setOnClickListener(this);
+        this.findViewById(R.id.btn_greenDao).setOnClickListener(this);
         validateService();
     }
 
@@ -114,6 +116,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                // new DownloadDemo(this).start();
                 JavaUtils javaUtils=new JavaUtils();
                 javaUtils.testPattern();
+                break;
+            case R.id.btn_greenDao:
+                Intent i2= new Intent(this, GreenDaoActivity.class);
+                this.startActivity(i2);
                 break;
 
         }
