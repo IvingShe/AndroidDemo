@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.generic.JavaGenericTestManager;
 import com.example.okhttpdemo.OKhttpDemoActivity;
 import com.iving.greendaodemo.GreenDaoActivity;
 
@@ -112,11 +113,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 this.startActivity(i);
                 break;
             case R.id.btn_java:
-              //  JavaGenericTestManager.test();
+                JavaGenericTestManager.test();
                // new DownloadDemo(this).start();
-                JavaUtils javaUtils=new JavaUtils();
-               // javaUtils.testPattern();
-                javaUtils.testCallableDemo();
+               // JavaUtils javaUtils=new JavaUtils();
+               //javaUtils.testPattern();
+               // javaUtils.testCallableDemo();
                 break;
             case R.id.btn_greenDao:
                 Intent i2= new Intent(this, GreenDaoActivity.class);

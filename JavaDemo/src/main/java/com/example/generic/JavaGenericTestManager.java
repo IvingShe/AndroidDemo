@@ -5,6 +5,8 @@ import com.demo.stack.StackDemo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -22,7 +24,7 @@ public class JavaGenericTestManager {
 
        // test.testGenericWildcard();
        // test.testGenericWildcard2();
-        //new JavaGenericTestManager().testGenericMethod();
+        new JavaGenericTestManager().testGenericMethod();
         testStack();
         testQueue();
     }
@@ -73,11 +75,21 @@ public class JavaGenericTestManager {
         List<String>  stringList= new ArrayList<>();
         doFromArray2List(stringArray,stringList);//泛型方法使用
 
-        Person[] personArray= new Person[]{new Person("A",12),new Person("B",13),new Person("C",13)};
+        Person[] personArray= new Person[]{new Person("A",18),new Person("B",15),new Person("C",13)};
         List<Person>  personList= new ArrayList<>();
 
         doFromArray2List(personArray,personList);//泛型方法使用
 
+        Collections.sort(personList, new Comparator<Person>() {
+            @Override
+            public int compare(Person person, Person t1) {
+                return person.age-t1.age;
+            }
+        });
+
+        for(Person person:personList){
+            System.out.println("--------person="+person);
+        }
 
     }
 
