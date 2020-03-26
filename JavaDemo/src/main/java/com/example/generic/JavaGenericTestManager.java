@@ -95,7 +95,6 @@ public class JavaGenericTestManager {
         for(T t:list){
             System.out.println(t);
         }
-
     }
 
 

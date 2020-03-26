@@ -2,6 +2,8 @@ package cn.iving.demo;
 
 import android.util.Log;
 
+import com.example.thread.CallabeDemo;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -14,6 +16,8 @@ public class JavaUtils {
 
 
     private static final String TAG="JavaUtils";
+
+
     public void testPattern(){
        Pattern p=Pattern.compile("\\w+");
         String strPattern= p.pattern();
@@ -76,5 +80,11 @@ public class JavaUtils {
             Log.d(TAG,"group1="+m.group());
         }
 
+    }
+
+
+    public void testCallableDemo(){
+     CallabeDemo callabeDemo = new  CallabeDemo();
+     callabeDemo.submitTask();
     }
 }

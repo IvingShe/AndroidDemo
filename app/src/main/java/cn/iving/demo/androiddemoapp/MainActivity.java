@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
-import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
@@ -115,7 +115,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
               //  JavaGenericTestManager.test();
                // new DownloadDemo(this).start();
                 JavaUtils javaUtils=new JavaUtils();
-                javaUtils.testPattern();
+               // javaUtils.testPattern();
+                javaUtils.testCallableDemo();
                 break;
             case R.id.btn_greenDao:
                 Intent i2= new Intent(this, GreenDaoActivity.class);

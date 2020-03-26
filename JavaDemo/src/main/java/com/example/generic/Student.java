@@ -14,8 +14,8 @@ public class Student extends Person {
     public String toString() {
         return "Student{" +
                 "school='" + school + '\'' +
-                ", name='" + name + '\'' +
-                ", age=" + age +
+                ", name ='" + name + '\'' +
+                ", age =" + age +
                 '}';
     }
 }
