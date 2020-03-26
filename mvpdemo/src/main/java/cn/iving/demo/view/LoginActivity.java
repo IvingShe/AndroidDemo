@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import cn.iving.demo.presenter.ILoginPresenter;
 import cn.iving.demo.presenter.LoginPresenterImple;
+import orc.migu.com.basemodulelibrary.Distributor;
+import orc.migu.com.basemodulelibrary.ITaskDestribution;
 
 /*
 reference:
@@ -89,8 +91,9 @@ public class LoginActivity extends AppCompatActivity implements ILoginView ,View
     public void onClick(View v) {
       int id=v.getId();
       if(id == R.id.btn_login){
-           loginPresenter.setProgressBarVisiblity(View.VISIBLE);
-           loginPresenter.doLogin(etUser.getText().toString(),etPwd.getText().toString());
+          Distributor.turn2Acitivity(this,"View");
+          // loginPresenter.setProgressBarVisiblity(View.VISIBLE);
+           //loginPresenter.doLogin(etUser.getText().toString(),etPwd.getText().toString());
       }else if(id == R.id.btn_clear){
            loginPresenter.clear();
       }
