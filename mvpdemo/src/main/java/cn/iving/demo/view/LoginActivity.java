@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import cn.iving.demo.common.TestManger;
 import cn.iving.demo.presenter.ILoginPresenter;
 import cn.iving.demo.presenter.LoginPresenterImple;
 import orc.migu.com.basemodulelibrary.Distributor;
@@ -91,11 +92,16 @@ public class LoginActivity extends AppCompatActivity implements ILoginView ,View
     public void onClick(View v) {
       int id=v.getId();
       if(id == R.id.btn_login){
-          Distributor.turn2Acitivity(this,"View");
+           //Distributor.turn2Acitivity(this,"View");
           // loginPresenter.setProgressBarVisiblity(View.VISIBLE);
            //loginPresenter.doLogin(etUser.getText().toString(),etPwd.getText().toString());
+
+          TestManger.test();
       }else if(id == R.id.btn_clear){
            loginPresenter.clear();
       }
     }
+
+
+
 }
