@@ -5,7 +5,7 @@ android {
         config {
             keyAlias 'cmread_android.keystore'
             keyPassword 'android001'
-            storeFile file('C:/signedfile/cmread_android.keystore')
+            storeFile file('../cmread_android.keystore')
             storePassword 'android001'
         }
     }
