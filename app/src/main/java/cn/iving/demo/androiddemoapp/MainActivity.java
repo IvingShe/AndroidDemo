@@ -113,9 +113,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 this.startActivity(i);
                 break;
             case R.id.btn_java:
-                JavaGenericTestManager.test();
+
+                //JavaGenericTestManager.test();
                // new DownloadDemo(this).start();
-               // JavaUtils javaUtils=new JavaUtils();
+               JavaUtils javaUtils=new JavaUtils();
+                javaUtils.testLambda();
                //javaUtils.testPattern();
                // javaUtils.testCallableDemo();
                 break;

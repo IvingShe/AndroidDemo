@@ -2,6 +2,7 @@ package cn.iving.demo;
 
 import android.util.Log;
 
+import com.example.lambda.LambdaDemo;
 import com.example.thread.CallabeDemo;
 
 import java.util.regex.Matcher;
@@ -9,13 +10,19 @@ import java.util.regex.Pattern;
 
 /**
  * @author Iving
- * @description to do
+ * @description Java 常用的方法测试验证
  * @date on 2020/3/11
  **/
 public class JavaUtils {
 
 
     private static final String TAG="JavaUtils";
+
+
+    public void  testLambda(){
+     LambdaDemo lambdaDemo = new LambdaDemo();
+     lambdaDemo.test(3,5);
+    }
 
 
     public void testPattern(){
