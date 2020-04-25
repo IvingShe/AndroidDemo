@@ -119,7 +119,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 //JavaGenericTestManager.test();
                // new DownloadDemo(this).start();
                JavaUtils javaUtils=new JavaUtils();
-                javaUtils.testConsumerAndProduct();
+                javaUtils.testByteArray();
+                //javaUtils.testConsumerAndProduct();
                // javaUtils.testLambda();
                //javaUtils.testPattern();
                // javaUtils.testCallableDemo();

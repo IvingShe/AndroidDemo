@@ -103,4 +103,41 @@ public class JavaUtils {
         FruitProductConsumerInstation instation = new FruitProductConsumerInstation();
         instation.start();
     }
+
+    /**
+     * 测试字符数组
+     */
+    public void testByteArray() {
+
+        String ABC = "abc";
+        String number = "123";
+
+        byte[] abcByteArray = ABC.getBytes();
+        byte[] numberByteArray = number.getBytes();
+
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("abcByteArray length=").append(abcByteArray.length)
+                .append(",numberByteArray length=").append(numberByteArray.length);
+        Log.d(TAG, sb.toString());
+        printByteArray(abcByteArray);
+        printByteArray(numberByteArray);
+        byte[] empty = new byte[ABC.getBytes().length];
+        printByteArray(empty);
+        Log.d(TAG, "############" );
+        byte[] tmp= empty;
+        empty=abcByteArray;
+        abcByteArray= tmp;
+
+        printByteArray(empty);
+        printByteArray(abcByteArray);
+    }
+
+    private void printByteArray(byte[] bytes) {
+        Log.d(TAG, "#printByteArray# length=" + bytes.length);
+        for(byte b:bytes){
+            Log.d(TAG, "#printByteArray# b=" +b);
+        }
+
+    }
 }
