@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.camrea.CameraActivity;
 import com.example.generic.JavaGenericTestManager;
 import com.example.okhttpdemo.OKhttpDemoActivity;
 import com.iving.greendaodemo.GreenDaoActivity;
@@ -46,6 +47,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 //                        .setAction("Action", null).show();
 //            }
 //        });
+        this.findViewById(R.id.btn_camera).setOnClickListener(this);
         this.findViewById(R.id.btn_mvp).setOnClickListener(this);
         //btn_validate_service
         this.findViewById(R.id.btn_customView).setOnClickListener(this);
@@ -125,6 +127,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.btn_greenDao:
                 Intent i2= new Intent(this, GreenDaoActivity.class);
                 this.startActivity(i2);
+                break;
+            case  R.id.btn_camera:
+                Intent iCamra= new Intent(this, CameraActivity.class);
+                this.startActivity(iCamra);
                 break;
 
         }
