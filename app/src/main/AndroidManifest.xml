@@ -16,7 +16,10 @@
      <!--接收短息-->
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
-   <application
+     <!--RECEIVE_BOOT_COMPLETED接收权限-->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+    <application
        android:allowBackup="true"
        android:icon="@drawable/image_citic_logo"
        android:label="@string/app_name"
@@ -44,6 +47,13 @@
        </activity>
        <service android:name="cn.iving.demo.service.MainService"></service>
        <service android:name="cn.iving.demo.service.DownloadService"></service>
+
+
+        <receiver android:name="cn.iving.demo.receiver.StartupReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
    </application>
 
 </manifest>
