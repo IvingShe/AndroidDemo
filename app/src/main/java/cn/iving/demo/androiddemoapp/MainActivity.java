@@ -119,11 +119,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 //JavaGenericTestManager.test();
                // new DownloadDemo(this).start();
                JavaUtils javaUtils=new JavaUtils();
-                javaUtils.testByteArray();
+                //javaUtils.testByteArray();
                 //javaUtils.testConsumerAndProduct();
                // javaUtils.testLambda();
                //javaUtils.testPattern();
-               // javaUtils.testCallableDemo();
+                javaUtils.testCallableDemo();
                 break;
             case R.id.btn_greenDao:
                 Intent i2= new Intent(this, GreenDaoActivity.class);

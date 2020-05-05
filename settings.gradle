@@ -1,1 +1,1 @@
-include ':app', ':mvpdemo', ':viewsdemo', ':neusofttrack', ':okhttpdemo', ':JavaDemo', ':greendaodemo', ':basemodulelibrary', ':camrea'
+include ':app', ':mvpdemo', ':viewsdemo', ':neusofttrack', ':okhttpdemo', ':JavaDemo', ':greendaodemo', ':basemodulelibrary', ':camrea', ':futuretask'
