@@ -20,11 +20,14 @@ import com.example.okhttpdemo.OKhttpDemoActivity;
 import com.iving.greendaodemo.GreenDaoActivity;
 
 
+import java.io.IOException;
+
 import cn.iving.demo.annotation.ViewInject;
 
 import cn.iving.demo.JavaUtils;
 
 import cn.iving.demo.customView.CustomViewActivity;
+import cn.iving.demo.http.HttpHelper;
 import cn.iving.demo.service.MainService;
 import cn.iving.demo.view.LoginActivity;
 
@@ -111,8 +114,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 sendBroadcast();
                 break;
             case R.id.btn_OKHttp:
-                Intent i= new Intent(this,OKhttpDemoActivity.class);
-                this.startActivity(i);
+                sendHttpRequest();
+//                Intent i= new Intent(this,OKhttpDemoActivity.class);
+//                this.startActivity(i);
                 break;
             case R.id.btn_java:
 
@@ -137,6 +141,21 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         }
     }
 
+    private void sendHttpRequest(){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Log.d("test", "MainActivity:sendHttpRequest");
+                HttpHelper httpHelper= new HttpHelper();
+                try {
+                    httpHelper.sendReqeust();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+
+    }
 
     private void validateService() {
         Log.d("test", "MainActivity:validateService");
