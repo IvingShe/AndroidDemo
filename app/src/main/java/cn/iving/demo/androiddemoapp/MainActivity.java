@@ -175,10 +175,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             @Override
             public void run() {
                 Log.d("test", "MainActivity:sendBroadcast:run");
-
-                Intent intent = new Intent();
-                intent.setAction("testvalidateService");
-                MainActivity.this.sendBroadcast(intent);
+                Intent intent= new Intent(MainActivity.this, MainService.class);
+//                Intent intent = new Intent();
+//                intent.setAction("testvalidateService");
+                MainActivity.this.startService(intent);
             }
         },5*1000);
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cn.iving.demo.androiddemoapp"
+    android:installLocation="internalOnly"
     xmlns:tools="http://schemas.android.com/tools">
     <uses-sdk tools:overrideLibrary="com.iving.greendaodemo"/>
   <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
@@ -35,6 +36,7 @@
                <action android:name="android.intent.action.MAIN" />
 
                <category android:name="android.intent.category.LAUNCHER" />
+
            </intent-filter>
        </activity>
        <activity
@@ -45,8 +47,8 @@
        <activity
            android:name="cn.iving.demo.customView.CustomViewActivity">
        </activity>
-       <service android:name="cn.iving.demo.service.MainService"></service>
-       <service android:name="cn.iving.demo.service.DownloadService"></service>
+       <service android:name="cn.iving.demo.service.MainService" android:process="com.test.process"></service>
+       <service android:name="cn.iving.demo.service.DownloadService" android:process="com.test.download">></service>
 
 
         <receiver android:name="cn.iving.demo.receiver.StartupReceiver">
@@ -55,5 +57,4 @@
             </intent-filter>
         </receiver>
    </application>
-
 </manifest>
