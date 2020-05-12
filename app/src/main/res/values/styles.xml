@@ -17,9 +17,9 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
     <!--自定义属性集：自定义属性集名为CircleView-->
-  <declare-styleable name="CircleView">
-      <attr name="radius" format="dimension"></attr>
-      <attr name="mycolor" format="color"></attr>
-  </declare-styleable>
+    <declare-styleable name="CircleView">
+        <attr name="radius" format="dimension"></attr>
+        <attr name="mycolor" format="color"></attr>
+    </declare-styleable>
 
 </resources>

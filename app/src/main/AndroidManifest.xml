@@ -1,60 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="cn.iving.demo.androiddemoapp"
-    android:installLocation="internalOnly"
-    xmlns:tools="http://schemas.android.com/tools">
-    <uses-sdk tools:overrideLibrary="com.iving.greendaodemo"/>
-  <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-  <uses-permission android:name="android.permission.RECORD_AUDIO"></uses-permission>
-  <uses-permission android:name="android.permission.CALL_PHONE"/>
+    android:installLocation="internalOnly">
 
-  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <!--发送短息：发送彩信-->
-    <uses-permission android:name="android.permission.SEND_SMS" />
-    <!--读取短信/彩信-->
-     <uses-permission android:name="android.permission.READ_SMS" />
-     <!--接收短息-->
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-sdk tools:overrideLibrary="com.iving.greendaodemo" />
 
-     <!--RECEIVE_BOOT_COMPLETED接收权限-->
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 发送短息：发送彩信 -->
+    <uses-permission android:name="android.permission.SEND_SMS" /> <!-- 读取短信/彩信 -->
+    <uses-permission android:name="android.permission.READ_SMS" /> <!-- 接收短息 -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" /> <!-- RECEIVE_BOOT_COMPLETED接收权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
-       android:allowBackup="true"
-       android:icon="@drawable/image_citic_logo"
-       android:label="@string/app_name"
-       android:roundIcon="@mipmap/ic_launcher_round"
-       android:supportsRtl="true"
-       android:theme="@style/AppTheme"
-       tools:replace="icon,label">
-       <activity
-           android:name=".MainActivity"
-           android:label="@string/app_name"
-           android:theme="@style/AppTheme.NoActionBar">
-           <intent-filter>
-               <action android:name="android.intent.action.MAIN" />
+        android:allowBackup="true"
+        android:icon="@drawable/image_citic_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="icon,label">
+        <activity
+            android:name="cn.iving.demo.aidleclient.AidlClientActivity"
+            android:label="@string/title_activity_aidl_client"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ui.login.AIDLClientActivity"
+            android:label="@string/title_activity_aidlclient" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-               <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PermissionCheckerActivity"
+            android:label="@string/title_activity_permission_checker"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="cn.iving.demo.customView.CustomViewActivity" />
 
-           </intent-filter>
-       </activity>
-       <activity
-           android:name=".PermissionCheckerActivity"
-           android:label="@string/title_activity_permission_checker"
-           android:theme="@style/AppTheme.NoActionBar">
-       </activity>
-       <activity
-           android:name="cn.iving.demo.customView.CustomViewActivity">
-       </activity>
-       <service android:name="cn.iving.demo.service.MainService" android:process="com.test.process"></service>
-       <service android:name="cn.iving.demo.service.DownloadService" android:process="com.test.download">></service>
-
+        <service
+            android:name="cn.iving.demo.service.MainService"
+            android:process="com.test.process" />
+        <service
+            android:name="cn.iving.demo.service.DownloadService"
+            android:process="com.test.download">
+            ></service>
 
         <receiver android:name="cn.iving.demo.receiver.StartupReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-   </application>
+    </application>
+
 </manifest>

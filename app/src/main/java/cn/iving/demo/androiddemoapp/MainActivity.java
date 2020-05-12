@@ -22,6 +22,7 @@ import com.iving.greendaodemo.GreenDaoActivity;
 
 import java.io.IOException;
 
+import cn.iving.demo.aidleclient.AidlClientActivity;
 import cn.iving.demo.annotation.ViewInject;
 
 import cn.iving.demo.JavaUtils;
@@ -60,6 +61,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         this.findViewById(R.id.btn_OKHttp).setOnClickListener(this);
         this.findViewById(R.id.btn_java).setOnClickListener(this);
         this.findViewById(R.id.btn_greenDao).setOnClickListener(this);
+
+        //btn_aidlclient
+
+        this.findViewById(R.id.btn_aidlclient).setOnClickListener(this);
         validateService();
     }
 
@@ -137,6 +142,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case  R.id.btn_camera:
                 Intent iCamra= new Intent(this, CameraActivity.class);
                 this.startActivity(iCamra);
+                break;
+            case  R.id.btn_aidlclient:
+                Intent aidlIntent= new Intent(this, AidlClientActivity.class);
+                this.startActivity(aidlIntent);
                 break;
 
         }
