@@ -122,6 +122,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
                 //JavaGenericTestManager.test();
                // new DownloadDemo(this).start();
+                testClassName();
                JavaUtils javaUtils=new JavaUtils();
                 //javaUtils.testByteArray();
                 //javaUtils.testConsumerAndProduct();
@@ -203,5 +204,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         }
     }
 
+
+    private void testClassName(){
+        String className =(new Throwable()).getStackTrace()[1].getClassName();
+        Log.d("test", "testClassName:className = " + className);
+    }
 
 }
