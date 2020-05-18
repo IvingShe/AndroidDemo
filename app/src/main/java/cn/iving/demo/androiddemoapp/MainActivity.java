@@ -8,10 +8,15 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.OrientationHelper;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.camrea.CameraActivity;
@@ -21,7 +26,10 @@ import com.iving.greendaodemo.GreenDaoActivity;
 
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
+import cn.iving.demo.adapter.RecycleAdapter;
 import cn.iving.demo.aidleclient.AidlClientActivity;
 import cn.iving.demo.annotation.ViewInject;
 
@@ -66,10 +74,35 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
         this.findViewById(R.id.btn_aidlclient).setOnClickListener(this);
         validateService();
+
+        initRecycleView();
     }
 
+    private RecyclerView mRv;
+    private void initRecycleView(){
+        mRv = this.findViewById(R.id.rv_testArray);
+        LinearLayoutManager layoutManager  = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        mRv.setLayoutManager(layoutManager);
+        RecycleAdapter adapter = new RecycleAdapter(this);
+        List<RecycleAdapter.DataBean> data =getData();
+        adapter.setDateBean(data);
+        mRv.setAdapter(adapter);
+    }
 
+    private List<RecycleAdapter.DataBean> getData(){
+        List<RecycleAdapter.DataBean> data= new ArrayList();
+        data.add(getDataBean(RecycleAdapter.DataBean.TYPE_TEST,"测试RecycleView Adapter"));
+        data.add(getDataBean(RecycleAdapter.DataBean.TYPE_PERMISSIONS,"测试权限使用"));
+        return data;
+    }
 
+    private RecycleAdapter.DataBean getDataBean(int type, String text){
+        RecycleAdapter.DataBean bean = new RecycleAdapter.DataBean();
+        bean.type = type;
+        bean.text =text;
+        return bean;
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
