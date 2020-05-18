@@ -6,18 +6,13 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
-
-import com.example.ipcaidlserver.IZJLab;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.os.IBinder;
+import android.os.RemoteException;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.ipcaidlserver.IZJLab;
 
 import cn.iving.demo.androiddemoapp.R;
 
@@ -26,6 +21,7 @@ public class AidlClientActivity extends Activity implements View.OnClickListener
     private static String TAG = "AidlClientActivity";
     private IZJLab mIZJLab;
     private TextView mTvContent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +34,7 @@ public class AidlClientActivity extends Activity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.btnBind:
                 bindService();
 
@@ -52,31 +48,33 @@ public class AidlClientActivity extends Activity implements View.OnClickListener
     }
 
 
-
-
-
-    private ServiceConnection  mCon= new ServiceConnection() {
+    private ServiceConnection mCon = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            mIZJLab= IZJLab.Stub.asInterface(service);
-            Log.d(TAG,"onServiceConnected");
+            mIZJLab = IZJLab.Stub.asInterface(service);
+            Log.d(TAG, "onServiceConnected");
+            try {
+                mIZJLab.getString();
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
         }
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            mIZJLab=null;
-            Log.d(TAG,"onServiceDisconnected");
+            mIZJLab = null;
+            Log.d(TAG, "onServiceDisconnected");
         }
     };
 
-    private void bindService(){
+    private void bindService() {
         Intent intent = new Intent("com.AIDLServerService");
         intent.setPackage("com.example.ipcaidlserver");
         this.getApplicationContext().bindService(intent, mCon, Service.BIND_AUTO_CREATE);
 
     }
 
-    private void unbindService(){
+    private void unbindService() {
         this.unbindService(mCon);
     }
 }

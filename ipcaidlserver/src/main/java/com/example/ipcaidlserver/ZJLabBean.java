@@ -1,6 +1,8 @@
 package com.example.ipcaidlserver;
 
+import android.os.Binder;
 import android.os.RemoteException;
+import android.util.Log;
 
 /**
  * author: li.she
@@ -15,7 +17,10 @@ public class ZJLabBean extends IZJLab.Stub{
 
     @Override
     public String getString() throws RemoteException {
-        return null;
+
+       int clientPId = Binder.getCallingPid();
+       Log.d("ZJLabBean","clientPId="+clientPId);
+       return null;
     }
 
     @Override

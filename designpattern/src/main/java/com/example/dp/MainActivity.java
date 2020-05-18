@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.RemoteException;
 import android.util.Log;
 import android.view.View;
 
@@ -33,6 +34,11 @@ public class MainActivity extends AppCompatActivity {
         public void onServiceConnected(ComponentName name, IBinder service) {
             mIZJLab= IZJLab.Stub.asInterface(service);
             Log.d(TAG,"onServiceConnected");
+            try {
+                mIZJLab.getString();
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
         }
 
         @Override
