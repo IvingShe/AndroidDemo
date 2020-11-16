@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
     public void  onBtnSubcribe(View v){
         Log.d(TAG,"onBtnSubcribe");
         SubscribePublish<String> subscribePublish = new SubscribePublish<String>("订阅器");
+        IPublisher<String> publisher1 = new PublisherImp("发布者1");
         ISubcriber<String> subcriber1 = new SubcriberImp("订阅者1");
         ISubcriber<String> subcriber2 = new SubcriberImp("订阅者2");
         subcriber1.subcribe(subscribePublish);
