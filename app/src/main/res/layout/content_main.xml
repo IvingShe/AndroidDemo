@@ -13,6 +13,7 @@
         android:id="@+id/ll_btnArray"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center_horizontal"
         android:orientation="vertical">
 
         <TextView
@@ -78,6 +79,11 @@
             android:layout_height="wrap_content"
             android:text="进入OKHttpDemo" />
 
+        <Button
+            android:id="@+id/btn_sensors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="进入传感器Demo" />
 
         <cn.iving.demo.customView.CircleView
             android:layout_width="wrap_content"

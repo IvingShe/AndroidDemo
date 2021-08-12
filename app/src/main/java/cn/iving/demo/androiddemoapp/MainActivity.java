@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.example.camrea.CameraActivity;
 import com.example.generic.JavaGenericTestManager;
 import com.example.okhttpdemo.OKhttpDemoActivity;
+import com.example.sensors.SensorsActivity;
 import com.iving.greendaodemo.GreenDaoActivity;
 
 
@@ -62,7 +63,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         this.findViewById(R.id.btn_OKHttp).setOnClickListener(this);
         this.findViewById(R.id.btn_java).setOnClickListener(this);
         this.findViewById(R.id.btn_greenDao).setOnClickListener(this);
-
+        this.findViewById(R.id.btn_sensors).setOnClickListener(this);
         //btn_aidlclient
 
         this.findViewById(R.id.btn_aidlclient).setOnClickListener(this);
@@ -172,6 +173,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case  R.id.btn_aidlclient:
                 Intent aidlIntent= new Intent(this, AidlClientActivity.class);
                 this.startActivity(aidlIntent);
+                break;
+            case R.id.btn_sensors:
+                Intent sensors= new Intent(this, SensorsActivity.class);
+                this.startActivity(sensors);
                 break;
 
         }
