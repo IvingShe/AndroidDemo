@@ -11,6 +11,7 @@ import android.os.RemoteException;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ipcaidlserver.IZJLab;
 
@@ -29,7 +30,12 @@ public class AidlClientActivity extends Activity implements View.OnClickListener
         findViewById(R.id.btnBind).setOnClickListener(this);
         findViewById(R.id.btnUnbind).setOnClickListener(this);
         mTvContent = findViewById(R.id.txt_content);
-
+        mTvContent.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                Toast.makeText(AidlClientActivity.this, "133", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -44,9 +50,14 @@ public class AidlClientActivity extends Activity implements View.OnClickListener
                 unbindService();
 
                 break;
+
         }
     }
 
+   public void view1(View view){
+       Toast.makeText(this,"I am from TextView" ,Toast.LENGTH_LONG).show();
+
+   }
 
     private ServiceConnection mCon = new ServiceConnection() {
         @Override

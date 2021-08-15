@@ -22,6 +22,7 @@
 
 
     <TextView
+        android:onClick="view1"
         android:id="@+id/txt_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

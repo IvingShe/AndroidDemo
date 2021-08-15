@@ -1,2 +1,3 @@
 include ':sensors'
-include ':app', ':mvpdemo', ':viewsdemo', ':neusofttrack', ':okhttpdemo', ':JavaDemo', ':greendaodemo', ':basemodulelibrary', ':camrea', ':futuretask', ':designpattern', ':serveronandroid', ':ipcaidlserver', ':zjlabaidlclient', ':mvvmDemo', ':kotlindemo'
+include  ':kotlindemo'
+include ':app', ':mvpdemo', ':viewsdemo', ':neusofttrack', ':okhttpdemo', ':JavaDemo', ':greendaodemo', ':basemodulelibrary', ':camrea', ':futuretask', ':designpattern', ':serveronandroid', ':ipcaidlserver', ':zjlabaidlclient', ':mvvmDemo'

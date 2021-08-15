@@ -27,6 +27,7 @@ import com.iving.greendaodemo.GreenDaoActivity;
 
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,6 +53,23 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
+
+        this.findViewById(R.id.tv_hello).setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                Log.d("iving++++","onFocusChange hasFocus="+hasFocus);
+                //Toast.makeText(MainActivity.this,"onFocusChange hasFocus="+hasFocus,Toast.LENGTH_LONG).show();
+            }
+        });
 
         this.findViewById(R.id.btn_camera).setOnClickListener(this);
         this.findViewById(R.id.btn_mvp).setOnClickListener(this);
@@ -178,8 +196,15 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 Intent sensors= new Intent(this, SensorsActivity.class);
                 this.startActivity(sensors);
                 break;
+            case R.id.btn_kotlin:
+                clickKotlin();
+                break;
 
         }
+    }
+
+    private void clickKotlin(){
+
     }
 
     private void sendHttpRequest(){
@@ -250,4 +275,15 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         Log.d("test", "testClassName:className = " + className);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        System.out.println("iving++++"+BigDecimal.valueOf(37.2f).remainder(BigDecimal.valueOf(10)));
+    }
+
+    public void onTextViewClick(View view){
+        Toast.makeText(this,"onTextViewClick",Toast.LENGTH_LONG).show();
+        Log.d("iving++++","onTextViewClick ");
+    }
 }
