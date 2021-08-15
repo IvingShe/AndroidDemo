@@ -3,6 +3,7 @@ package com.example.kotlindemo
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.base.Bird
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -37,6 +38,24 @@ class MainActivity : AppCompatActivity() {
             testCompanion(animal)
 
         }
+
+        btn_inheritance.setOnClickListener {
+
+            /**
+             * 基类测试
+             */
+            /*
+            var bird:Bird = Bird("bird",Bird.FEMALE)
+            tv_inheritance_content.text = bird.getDes("Bird")
+
+             */
+
+            /**
+             * 继承类使用
+             */
+            var duck:Duck = Duck("唐老鸭", Bird.StaticBird.MALE)
+            tv_inheritance_content.text = duck.getDes("duck")
+        }
     }
 
     /***
@@ -55,6 +74,8 @@ class MainActivity : AppCompatActivity() {
          */
         tv_content.text = "我来自友元，我的性别代码为：${Animal.judgeSex(animal.sexName).toString()} and ${Animal.FEMALE}"
     }
+
+
 
     fun testAdd(a:Int,b:Int):Int{
        return a+b
